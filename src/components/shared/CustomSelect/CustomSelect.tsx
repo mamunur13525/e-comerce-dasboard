@@ -2,16 +2,24 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { RiArrowDownSLine } from 'react-icons/ri'
 
-const CustomSelect = ({ changeFunc, items, label, optional = false, customClass = '' }) => {
+interface Props{
+    changeFunc: Function,
+    items: any,
+    label: string,
+    optional: boolean,
+    customClass: string,
+    customParentClass: string
+}
+const CustomSelect = ({ changeFunc, items, label, optional = false, customClass = '', customParentClass = "" }: Props) => {
     const [selectedPerson, setSelectedPerson] = useState(items[0])
    
-    const handleChange = (value) => {
+    const handleChange = (value: any) => {
         changeFunc(value)
         setSelectedPerson(value)
       
     }
     return (
-        <div className='w-full'>
+        <div className={`w-full ${customParentClass}`}>
             <p className='font-semibold text-sm'>{label} <span className='text-gray-400 font-normal'>{optional ? `(Optional)` : ''}</span></p>
             <Listbox value={selectedPerson} onChange={handleChange}>
                 <div className={`relative mt-1 w-full`}>
@@ -31,7 +39,7 @@ const CustomSelect = ({ changeFunc, items, label, optional = false, customClass 
                         leaveTo="opacity-0"
                     >
                         <Listbox.Options className="absolute -mt-2 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-50 pl-0">
-                            {items.map((person, personIdx) => (
+                            {items.map((person: any, personIdx: any) => (
                                 <Listbox.Option
                                     key={personIdx}
                                     className={({ active }) =>

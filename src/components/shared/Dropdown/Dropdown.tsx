@@ -1,7 +1,15 @@
 import { Menu, Transition } from '@headlessui/react'
 import React, { Fragment } from 'react'
 
-export default function MyDropdown({ btnText, btnCss, items = [], itemCss,side='right-0' }) {
+
+interface Props {
+    btnText: any,
+    btnCss: string,
+    items: any,
+    itemCss: string,
+    side: string
+}
+export default function MyDropdown({ btnText, btnCss, items = [], itemCss = '', side = 'right-0' }: Props) {
     return (
         <div className="">
             <Menu as="div" className="relative inline-block text-left">
@@ -22,7 +30,7 @@ export default function MyDropdown({ btnText, btnCss, items = [], itemCss,side='
                     <Menu.Items className={`absolute  mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 ${side}`}>
                         <div className="px-1 py-1 ">
                             {
-                                items.map(item => (
+                                items.map((item: any) => (
                                     <div key={item.id}>
                                         <Menu.Item >
                                             {({ active }) => (

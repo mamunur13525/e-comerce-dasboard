@@ -11,6 +11,7 @@ import Orders from "../../pages/Orders/Orders.tsx";
 import SettingPage from "../../pages/SettingPage/SettingPage.tsx";
 import Dashboard from "../../pages/dashbaord/index.tsx";
 import DashboardSidebar from "../shared/DashboardSidebar/DashboardSidebar.tsx";
+import Products from "../../pages/Products/Products.tsx";
 
 const PageRoutes = () => {
   const location = useLocation();
@@ -70,6 +71,11 @@ const PageRoutes = () => {
       id: 11,
       path: "/",
       component: <Login />
+    },
+    {
+      id: 11,
+      path: "/products",
+      component: <Products />
     }
   ];
 

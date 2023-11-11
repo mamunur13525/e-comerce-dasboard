@@ -64,7 +64,7 @@ const DashboardSidebar = () => {
             </div>
 
 
-            <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen} >
+            <Modal  isOpen={isModalOpen} setIsOpen={setIsModalOpen} >
                 <div className="mt-2 flex flex-col items-center justify-center">
                     <img src={logout_png} alt="log_out_icon" />
                     <h1 className='text-2xl font-bold text-center mt-5 mb-3'>Logout</h1>
@@ -117,8 +117,8 @@ const SidebarItems = ({ setOpenSideBarMobile }) => {
         },
         {
             id: 4,
-            name: 'Drivers',
-            path: '/drivers',
+            name: 'Products',
+            path: '/products',
             icon: icons.drivers,
             activeIcon: icons.driversWhite
         },
